@@ -42,7 +42,7 @@ test("should hide original input and show selects (24h)", function () {
 
   ok(!e.is(':visible'), 'input hidden');
   $.each(map, function(k, v) {
-      if(k === 'ampm') return;
+      if(k === 'ampm' || k === 'millisecond') return;
       var sel = e.siblings('.combodate').find('.'+k);
       ok(sel.is(':visible'), k+' shown');
       equal(sel.find('option').length, counts[k]+1, k+' options count ok');
